@@ -223,16 +223,17 @@ if ( ! function_exists( 'formulus_input_fields' ) ) {
 
 if ( ! function_exists( 'formulus_input_table' ) ) {
 	/**
-	 * This method displays input fields into the dashboard.
+	 * Build table containing multiple input.
 	 *
-	 * @param $key
-	 * @param $args
+	 * @param  mixed $key Key of table.
+	 * @param  mixed $args List of fields that must been added to the table.
+	 * @return void
 	 */
 	function formulus_input_table( $key, $args ) {
 		$html = "<table style='border-style:double;' name='formulus-input-" . $key . "'> <tbody>";
 		foreach ( $args as $arg ) {
 			$label_class = '';
-			if ( $arg['label_class'] ) {
+			if ( isset( $arg['label_class'] ) ) {
 				$label_class = $arg['label_class'];
 			}
 			$tr_class = '';
@@ -259,7 +260,13 @@ if ( ! function_exists( 'formulus_input_table' ) ) {
 
 if ( ! function_exists( 'formulus_format_fields' ) ) {
 
-
+	/**
+	 * Escape html fields based on some tags.
+	 *
+	 * @param  mixed $html_field Html code to escape.
+	 *
+	 * @return void
+	 */
 	function formulus_format_fields( $html_field ) {
 		$allowedposttags = array();
 		$allowed_atts    = array(
