@@ -1,9 +1,4 @@
 <?php
-
-if ( ! defined( 'ABSPATH' ) ) {
-	die();
-}
-
 if ( ! function_exists( 'formulus_input_fields' ) ) {
 	/**
 	 * Generate appropriate fields for meta and page in WordPress.
@@ -15,6 +10,10 @@ if ( ! function_exists( 'formulus_input_fields' ) ) {
 	 * @return string
 	 */
 	function formulus_input_fields( $key, $args, $value = null ) {
+
+		if ( ! defined( 'ABSPATH' ) ) {
+			die( 'This function requires WordPress to be runned.' );
+		}
 
 		$defaults = array(
 			'type'              => 'text',
