@@ -341,6 +341,12 @@ if ( ! function_exists( 'formulus_format_fields' ) ) {
 		$allowedposttags['i']        = $allowed_atts;
 		$allowedposttags['option']   = $allowed_atts;
 		$allowedposttags['button']   = $allowed_atts;
-		echo wp_kses( $html_field, $allowedposttags );
+
+		if ( function_exists( 'wp_kses' ) ) {
+			echo wp_kses( $html_field, $allowedposttags );
+		} else {
+			echo strip_tags( $html_field, array_keys( $allowedposttags ) );
+		}
+
 	}
 }
