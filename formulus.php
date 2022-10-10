@@ -1,4 +1,10 @@
 <?php
+/**
+ * Author:            HomeScript
+ * Author URI:        https://homescriptone.com
+ * License:           GPL-3
+ * License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
+ */
 if ( ! function_exists( 'formulus_input_fields' ) ) {
 	/**
 	 * Generate appropriate fields for meta and page in WordPress.
