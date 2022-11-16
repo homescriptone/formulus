@@ -59,7 +59,7 @@ The parameter **$args** has this architecture :
 ```php
 $args = array(
 	'product' => array( // specify the key for identifying this field
-		'label'   // field label    => __( 'Title :' ),
+		'label' ,  // field label    => __( 'Title :' ),
 		'label_class' => 'table-label', // class for the field label
 		'description' => __( 'Title to show on top of the configurator.', ), // description for the field
 		'content'     => '', // specify the HTML code to render for this field ,
